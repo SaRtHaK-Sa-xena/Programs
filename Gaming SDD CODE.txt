@@ -1,0 +1,141 @@
+#include <iostream>
+#include <string>
+class Hero
+{
+  private:
+   int lives;
+   int health;
+   int mana;
+   
+  public:
+   int getlives()
+   {
+     return lives;
+   }
+    
+    void setlives(int i)
+    {
+      lives=i;
+    }
+   int gethealth()
+   {
+    return health;
+   }
+  
+    void sethealth(int h)
+    {
+     health=h;
+    }
+   int getmana()
+   {
+     return mana;
+   }
+    
+    void setmana(int m)
+    {
+    mana=m;
+    }
+    
+};   
+class Enemy
+{
+  private:
+   int lives;
+   
+   
+  
+  public:
+  
+   int health;
+   int damage;
+  
+  int getlives()
+   {
+     return lives;
+   }
+    
+    void setlives(int i)
+    {
+      lives=i;
+    }
+  int gethealth()
+   {
+     return health;
+   }
+    void sethealth(int h)
+    {
+      health=h;
+    }
+  int getdamage()
+   {
+     return damage;
+   }
+    
+    void setdamage(int d)
+    {
+      damage=d;
+    }
+
+};
+
+
+class Minions: public Enemy
+{
+  int getminionhealth()
+   {
+     return health;
+   }
+    void setminionhealth(int mh)
+    {
+      health=mh;
+    }
+  int getminiondamage()
+   {
+     return damage;
+   }
+    void setminiondamage(int md)
+    {
+      damage=md;
+    }
+  
+};
+ 
+int main()
+{
+   Hero A;
+   std::cout<< "-----------------------WELCOME TO WROTHGAR----------------------------" << "\n" << "----------------------THE LEGENDARY FIGHTER---------------------------" << "\n";
+    char name[50]; 
+   std::cout << "Generic Hero:"; 
+   std::cin >> name; 
+   std::cout << "You are " << name << " of Wrothgar" << "\n";
+   A.setlives(3);
+   std::cout<<"You have: " << A.getlives()<< " lives" << "\n";
+   A.sethealth(10);
+   std::cout<< "Health: " << A.gethealth() << "\n";
+   A.setmana(20);
+   std::cout<< "Mana: " << A.getmana() << "\n";
+   
+   Enemy B;
+   std::cout << "\n" << "Name your Enemy:";
+   std::cin >> name;
+   std::cout << "You are challenged by " << name << " of Kortana" << "\n";
+   B.setlives(1);
+   std::cout<<"He has: " << B.getlives()<< " lives" << "\n";
+   B.setdamage(2);
+   std::cout<<"Look out he does: " << B.getdamage()<< " hearts of damage" << "\n";
+   
+   
+   Minions C;
+   std::cout<<"Oh no " << name << " has minions" << "\n";
+   std::cout<< "Grumpy-(>.<)" << "  Bumpy- (~.~)" << "\n";
+   std::cout<< "      /(# #)/" << "       /(# #)/" << "\n";
+   std::cout<<"        ! !" << "           ! !" << "\n";
+   C.sethealth(1);
+   std::cout<< "Minion Health: " << C.gethealth() << "\n";
+   C.setdamage(1);
+   std::cout<< "Minion damage: " << C.getdamage() << "\n";
+   
+
+   
+   
+};
